@@ -6,7 +6,7 @@ DURATION: DECEMBER TO JANUARY
 MENTOR: Neela Santhosh Kumar 
 Overview of the project:
 the project based on the Exploratory Data Analysis (EDA) of the Iris dataset:
- ![codetech output](https://github.com/user-attachments/assets/8f23069f-6187-4df0-b9b2-c3c8bdcc3267)
+
 
 Project Goal:
 To gain insights into the Iris dataset by exploring its features, understanding the distribution of data, observing correlations between features, and identifying any outliers or patterns.
@@ -53,4 +53,4 @@ Outliers: Box plots might show some outliers, particularly in sepal width, indic
 
 Conclusion:
 This EDA provides a foundational understanding of the Iris dataset, which can be crucial for further statistical analysis or machine learning tasks like classification. It helps in identifying which features might be more important for distinguishing between Iris species and prepares the data for more complex analysis or modeling steps. 
-
+ ![codetech output](https://github.com/user-attachments/assets/8f23069f-6187-4df0-b9b2-c3c8bdcc3267)
