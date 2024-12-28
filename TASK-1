@@ -1,0 +1,41 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+data = pd.DataFrame(data=np.c_[iris['data'], iris['target']], 
+                    columns=iris['feature_names'] + ['target'])
+
+print(data.head())
+print(data.info())
+print(data.describe())
+
+plt.figure(figsize=(15, 10))
+for i, feature in enumerate(iris['feature_names']):
+    plt.subplot(2, 2, i+1)
+    data[feature].hist(bins=30)
+    plt.title(f'Distribution of {feature}')
+plt.suptitle("Distribution of Iris Features", fontsize=20)
+plt.tight_layout()
+plt.show()
+
+corr = data.drop('target', axis=1).corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(corr, annot=True, cmap='coolwarm', linewidths=0.5)
+plt.title("Correlation Heatmap of Iris Features", fontsize=16)
+plt.show()
+
+sns.pairplot(data, hue='target', height=2.5)
+plt.suptitle("Iris Dataset Pair Plot", fontsize=20)
+plt.show()
+
+plt.figure(figsize=(20, 10))
+for i, feature in enumerate(iris['feature_names']):
+    plt.subplot(2, 2, i+1)
+    sns.boxplot(y=data[feature])
+    plt.title(f'Box Plot of {feature}')
+plt.tight_layout()
+plt.show()
